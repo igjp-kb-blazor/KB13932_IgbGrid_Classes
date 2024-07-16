@@ -1,0 +1,36 @@
+﻿<div style="max-width: 900px; max-height: 900px; margin: auto; padding: 24px; display: flex; flex-direction: column; gap: 24px;">
+    <IgbGrid Data="_tickets"
+             Width="100%"
+             Height="100%"
+             PrimaryKey="@nameof(SupportTicket.TicketNum)"
+             AutoGenerate="false" 
+             RowClassesScript="RowClassesHandler">
+        <IgbColumn Field="@nameof(SupportTicket.Name)" Header="顧客名" CellClassesScript="CellClassesHandler1"></IgbColumn>
+        <IgbColumn Field="@nameof(SupportTicket.Inquiries )" Header="お問い合わせ" CellClassesScript="CellClassesHandler2"></IgbColumn>
+        <IgbColumn Field="@nameof(SupportTicket.Status)" Header="ステータス"></IgbColumn>
+   </IgbGrid>
+</div>
+
+@code {
+    public class SupportTicket
+    {
+        public int TicketNum { get; set; }
+        public string? Name { get; set; }
+        public string? Inquiries  { get; set; }
+        public string? Status { get; set; }
+    }
+
+    private List<SupportTicket> _tickets = new List<SupportTicket>
+    {
+        new SupportTicket { TicketNum = 1001, Name = "田中 花子", Inquiries  = "テクニカルサポート", Status = "オープン" },
+        new SupportTicket { TicketNum = 1002, Name = "佐藤 太郎", Inquiries  = "請求に関するお問い合わせ", Status = "完了" },
+        new SupportTicket { TicketNum = 1003, Name = "鈴木 一郎", Inquiries  = "製品フィードバック", Status = "オープン" },
+        new SupportTicket { TicketNum = 1004, Name = "山田 さくら", Inquiries  = "テクニカルサポート", Status = "進行中" },
+        new SupportTicket { TicketNum = 1005, Name = "高橋 次郎", Inquiries  = "注文追跡", Status = "完了" },
+        new SupportTicket { TicketNum = 1006, Name = "中村 美咲", Inquiries  = "不具合報告", Status = "オープン" },
+        new SupportTicket { TicketNum = 1007, Name = "小林 健太", Inquiries  = "アカウントの問題", Status = "進行中" },
+        new SupportTicket { TicketNum = 1008, Name = "伊藤 まゆみ", Inquiries  = "注文キャンセル", Status = "完了" },
+        new SupportTicket { TicketNum = 1009, Name = "斎藤 光子", Inquiries  = "返品の問題", Status = "オープン" },
+        new SupportTicket { TicketNum = 1010, Name = "加藤 次郎", Inquiries  = "商品の交換", Status = "完了" }
+    };
+}

@@ -1,0 +1,23 @@
+﻿/*ステータスが"オープン"のとき*/
+::deep .open .name,
+::deep .open .inquiries {
+    color: green;
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+/*ステータスが"進行中"のとき*/
+::deep .inProgress .name,
+::deep .inProgress .inquiries {
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/*ステータスが"完了"のとき*/
+::deep .closed .name,
+::deep .closed .inquiries {
+    color: black;
+    background-color: lightgray;
+    font-weight: bold;
+}
